@@ -53,15 +53,32 @@ document.addEventListener("click", (e) => {
   el.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
-// Mobile menu toggle
+// Mobile menu toggle (hidden by default)
 const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector("[data-menu]");
+
 if (hamburger && menu) {
-  hamburger.addEventListener("click", () => {
-    const isOpen = hamburger.getAttribute("aria-expanded") === "true";
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = menu.classList.contains("open");
+
+    menu.classList.toggle("open", !isOpen);
+    menu.hidden = false;
     hamburger.setAttribute("aria-expanded", String(!isOpen));
-    menu.hidden = isOpen;
   });
+
+  // Close when clicking a link
+  menu.addEventListener("click", () => {
+    menu.classList.remove("open");
+    hamburger.setAttribute("aria-expanded", "false");
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", () => {
+    menu.classList.remove("open");
+    hamburger.setAttribute("aria-expanded", "false");
+  });
+}
 
   // Close menu when a link is clicked
   menu.addEventListener("click", (e) => {
