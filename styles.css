@@ -615,7 +615,7 @@ html, body {
 
 body {
   background-image: url("assets/Asset15.jpg");
-  background-size: cover;        /* fills screen */
+  background-size: contain;        /* fills screen */
   background-position: center;   /* centers image */
   background-repeat: no-repeat;
   background-attachment: fixed;  /* subtle parallax feel */
