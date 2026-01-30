@@ -549,4 +549,45 @@ code{
   object-fit: cover;
   border-radius: 16px;
   border: 1px solid rgba(255,255,255,.12);
+
+  /* ---------- Mobile polish pass ---------- */
+@media (max-width: 560px){
+  :root{ --pad: 16px; }
+
+  .nav{
+    padding: 12px var(--pad);
+    gap: 10px;
+  }
+
+  .navActions .btn{
+    padding: 11px 12px;     /* nicer tap target */
+    border-radius: 14px;
+  }
+
+  /* Make the top CTA buttons full-width stacked */
+  .ctaRow{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .ctaRow .btn{ width: 100%; }
+
+  /* Hero card spacing */
+  .heroCard .cardInner{ padding: 14px; }
+  .mockArt{ height: 180px; }
+
+  /* Make sections feel less cramped */
+  .section{ padding: 44px 0; }
+  .sectionHead h2{ font-size: 24px; }
+
+  /* Bigger media blocks for thumbs */
+  .videoPlaceholder{ height: 210px; }
+
+  /* Screenshots: 1 column for nicer viewing */
+  .shotGrid{ grid-template-columns: 1fr; }
+  .shot, .shotImg{ height: 160px; }
+
+  /* Roadmap and community spacing */
+  .communityCard{ padding: 16px; border-radius: 22px; }
+  .footer{ flex-direction: column; align-items:flex-start; }
+}
 }
