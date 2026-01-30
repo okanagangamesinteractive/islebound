@@ -596,3 +596,6 @@ code{
   .footer{ flex-direction: column; align-items:flex-start; }
 }
 }
+.mobileMenu[hidden]{
+  display: none !important;
+}
