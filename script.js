@@ -58,34 +58,28 @@ const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector("[data-menu]");
 
 if (hamburger && menu) {
+  // Ensure hidden on load
+  menu.hidden = true;
+
   hamburger.addEventListener("click", (e) => {
     e.stopPropagation();
-    const isOpen = menu.classList.contains("open");
-
-    menu.classList.toggle("open", !isOpen);
-    menu.hidden = false;
+    const isOpen = !menu.hidden;
+    menu.hidden = isOpen; // toggle
     hamburger.setAttribute("aria-expanded", String(!isOpen));
-  });
-
-  // Close when clicking a link
-  menu.addEventListener("click", () => {
-    menu.classList.remove("open");
-    hamburger.setAttribute("aria-expanded", "false");
   });
 
   // Close when clicking outside
   document.addEventListener("click", () => {
-    menu.classList.remove("open");
-    hamburger.setAttribute("aria-expanded", "false");
+    if (!menu.hidden) {
+      menu.hidden = true;
+      hamburger.setAttribute("aria-expanded", "false");
+    }
   });
-}
 
-  // Close menu when a link is clicked
-  menu.addEventListener("click", (e) => {
-    const link = e.target.closest("a,button");
-    if (!link) return;
-    hamburger.setAttribute("aria-expanded", "false");
+  // Close when clicking inside the menu (link/button)
+  menu.addEventListener("click", () => {
     menu.hidden = true;
+    hamburger.setAttribute("aria-expanded", "false");
   });
 }
 
