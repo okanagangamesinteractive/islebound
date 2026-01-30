@@ -58,14 +58,14 @@ const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector("[data-menu]");
 
 if (hamburger && menu) {
-  // Ensure hidden on load
+  // Always start hidden
   menu.hidden = true;
 
   hamburger.addEventListener("click", (e) => {
     e.stopPropagation();
-    const isOpen = !menu.hidden;
-    menu.hidden = isOpen; // toggle
-    hamburger.setAttribute("aria-expanded", String(!isOpen));
+    const willOpen = menu.hidden;     // if hidden, we are about to open it
+    menu.hidden = !willOpen;          // toggle
+    hamburger.setAttribute("aria-expanded", String(willOpen));
   });
 
   // Close when clicking outside
@@ -76,7 +76,7 @@ if (hamburger && menu) {
     }
   });
 
-  // Close when clicking inside the menu (link/button)
+  // Close when clicking inside the menu
   menu.addEventListener("click", () => {
     menu.hidden = true;
     hamburger.setAttribute("aria-expanded", "false");
