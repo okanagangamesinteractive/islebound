@@ -42,7 +42,7 @@ a:hover{opacity:.9}
 
 .topGlow{
   position:fixed; top:0; left:0; right:0; height:3px;
-  background: linear-gradient(90deg, transparent, rgba(109,226,255,.8), rgba(181,109,255,.8), rgba(99,255,162,.7), transparent);
+  : linear-gradient(90deg, transparent, rgba(109,226,255,.8), rgba(181,109,255,.8), rgba(99,255,162,.7), transparent);
   filter: blur(.3px);
   opacity:.85;
   z-index: 100;
@@ -53,7 +53,7 @@ a:hover{opacity:.9}
   top:0;
   z-index: 50;
   backdrop-filter: blur(10px);
-  background: rgba(7,10,18,.55);
+  : rgba(7,10,18,.55);
   border-bottom: 1px solid var(--line);
   display:flex;
   align-items:center;
@@ -615,7 +615,7 @@ html, body {
 
 body {
   background-image: url("assets/Asset15.jpg");
-  background-size: contain;        /* fills screen */
+  background-size: cover;        /* fills screen */
   background-position: center;   /* centers image */
   background-repeat: no-repeat;
   background-attachment: fixed;  /* subtle parallax feel */
