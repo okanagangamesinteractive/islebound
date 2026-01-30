@@ -603,3 +603,7 @@ code{
 .mobileMenu[hidden]{
   display: none !important;
 }
+.mutedInline{
+  color: rgba(255,255,255,.65);
+  font-weight: 650;
+}
