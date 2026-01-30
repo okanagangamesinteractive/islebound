@@ -99,27 +99,32 @@ a:hover{opacity:.9}
   border-radius: 2px;
 }
 
+/* Mobile slide-down menu (hidden by default) */
 .mobileMenu{
-  position: sticky;
-  top: 62px;
-  z-index: 49;
-  background: rgba(10,16,34,.92);
+  position: fixed;
+  top: 62px;                /* just under top nav */
+  left: 0;
+  right: 0;
+  z-index: 60;
+
+  background: rgba(10,16,34,.96);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(12px);
+
   padding: 14px var(--pad);
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
-.mobileMenu a{
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: rgba(255,255,255,.03);
-  color: var(--text);
-  font-weight: 650;
+.mobileMenu.open{
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
-.mobileMenu a:hover{background: rgba(255,255,255,.06)}
+  transform: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .18s ease, opacity .18s ease;
 
 @media (max-width: 920px){
   .navLinks{display:none}
