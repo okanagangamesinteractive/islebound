@@ -1,1 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Islebound — gather resources, build your castle, and brave the Void." />
+  <title>Islebound</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+
+  <!-- Social share (edit later) -->
+  <meta property="og:title" content="Islebound" />
+  <meta property="og:description" content="Gather. Build. Raid the Void." />
+  <meta property="og:type" content="website" />
+</head>
+
+<body>
+  <!-- Top progress glow -->
+  <div class="topGlow" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="Islebound Home">
+      <span class="brandMark" aria-hidden="true"></span>
+      <span class="brandName">Islebound</span>
+    </a>
+
+    <nav class="navLinks" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#media">Media</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#faq">FAQ</a>
+      <a href="#community">Community</a>
+    </nav>
+
+    <div class="navActions">
+      <button class="btn ghost" data-scroll="#community">Follow</button>
+      <button class="btn primary" data-link="roblox">Play on Roblox</button>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobileMenu" data-menu hidden>
+    <a href="#features">Features</a>
+    <a href="#media">Media</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#faq">FAQ</a>
+    <a href="#community">Community</a>
+    <button class="btn primary wide" data-link="roblox">Play on Roblox</button>
+  </div>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container heroGrid">
+        <div class="heroText">
+          <div class="pill">
+            <span class="dot" aria-hidden="true"></span>
+            <span>In development • Community-driven updates</span>
+          </div>
+
+          <h1>
+            Gather. Build. <span class="accent">Raid the Void.</span>
+          </h1>
+
+          <p class="lead">
+            Islebound is a Roblox adventure where you harvest resources, upgrade your castle,
+            and battle through solo & group Void raids — all from a vibrant hub of floating islands.
+          </p>
+
+          <div class="ctaRow">
+            <button class="btn primary" data-link="roblox">Play on Roblox</button>
+            <button class="btn ghost" data-link="discord">Join Discord</button>
+            <button class="btn subtle" data-scroll="#media">Watch / See Media</button>
+          </div>
+
+          <div class="statRow">
+            <div class="stat">
+              <div class="statNum">3</div>
+              <div class="statLabel">Core Loops</div>
+              <div class="statHint">Gather • Build • PvE/PvP</div>
+            </div>
+            <div class="stat">
+              <div class="statNum">∞</div>
+              <div class="statLabel">Dynamic Islands</div>
+              <div class="statHint">Spawn around the hub</div>
+            </div>
+            <div class="stat">
+              <div class="statNum">Void</div>
+              <div class="statLabel">Raid System</div>
+              <div class="statHint">Solo + Group challenges</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="heroCard">
+          <div class="cardGlow" aria-hidden="true"></div>
+          <div class="cardInner">
+            <div class="cardTop">
+              <div class="badge">Featured</div>
+              <div class="tiny">High-resolution, clean UI style</div>
+            </div>
+
+            <div class="mock">
+              <div class="mockHeader">
+                <div class="dots" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="mockTitle">Islebound • Hub Island</div>
+              </div>
+
+              <div class="mockBody">
+                <div class="mockArt" role="img" aria-label="Placeholder island artwork panel">
+                  <div class="mockArtOverlay">
+                    <div class="mockArtLine"></div>
+                    <div class="mockArtLine short"></div>
+                  </div>
+                </div>
+
+                <div class="mockControls">
+                  <div class="chip">Resource Portal</div>
+                  <div class="chip">Castle Bridge</div>
+                  <div class="chip">Void Gate</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cardBottom">
+              <button class="btn primary wide" data-link="roblox">Play (Placeholder)</button>
+              <button class="btn ghost wide" data-link="trailer">Trailer (Placeholder)</button>
+            </div>
+            <p class="hint">
+              Replace placeholders any time — this site is designed to evolve with your devlog ✨
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="heroWave" aria-hidden="true"></div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section">
+      <div class="container">
+        <div class="sectionHead">
+          <h2>What you do in Islebound</h2>
+          <p>
+            A satisfying progression loop: start small, build up your castle, unlock stronger zones,
+            and earn bragging rights in the Void.
+          </p>
+        </div>
+
+        <div class="grid3">
+          <article class="feature">
+            <h3>Resource Gathering</h3>
+            <p>Harvest wood, stone, and rare materials from themed zones with satisfying upgrades.</p>
+            <ul>
+              <li>Tiered resources</li>
+              <li>Fast, readable UI</li>
+              <li>Progression-driven unlocks</li>
+            </ul>
+          </article>
+
+          <article class="feature">
+            <h3>Castle Building</h3>
+            <p>Upgrade your interior and show off your exterior on the main island map.</p>
+            <ul>
+              <li>Visible castle progression</li>
+              <li>Interior-focused gameplay</li>
+              <li>Bridge access from hub</li>
+            </ul>
+          </article>
+
+          <article class="feature">
+            <h3>Void Raids</h3>
+            <p>Solo & group raids that test builds, teamwork, and skill — with rotating titles.</p>
+            <ul>
+              <li>Boss mechanics</li>
+              <li>Ranked rewards</li>
+              <li>Weekly recognition</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDIA -->
+    <section id="media" class="section alt">
+      <div class="container">
+        <div class="sectionHead">
+          <h2>Media</h2>
+          <p>Drop screenshots, a trailer, and dev gifs here when you’re ready. For now, placeholders 💫</p>
+        </div>
+
+        <div class="mediaGrid">
+          <div class="mediaPanel">
+            <div class="mediaTop">
+              <h3>Trailer</h3>
+              <button class="btn subtle small" data-link="trailer">Open (Placeholder)</button>
+            </div>
+            <div class="videoPlaceholder" role="img" aria-label="Trailer placeholder">
+              <div class="playIcon" aria-hidden="true"></div>
+              <div class="videoText">
+                <div class="videoTitle">Trailer Coming Soon</div>
+                <div class="videoSub">Add YouTube link later</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mediaPanel">
+            <div class="mediaTop">
+              <h3>Screenshots</h3>
+              <button class="btn subtle small" data-scroll="#community">Submit Media</button>
+            </div>
+
+            <div class="shotGrid">
+              <div class="shot" aria-label="Screenshot placeholder 1"></div>
+              <div class="shot" aria-label="Screenshot placeholder 2"></div>
+              <div class="shot" aria-label="Screenshot placeholder 3"></div>
+              <div class="shot" aria-label="Screenshot placeholder 4"></div>
+            </div>
+
+            <p class="miniHint">
+              Tip: export 16:9 images at ~1600px wide for crisp loading on GitHub Pages.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section id="roadmap" class="section">
+      <div class="container">
+        <div class="sectionHead">
+          <h2>Roadmap</h2>
+          <p>Simple, transparent, and easy to update. Swap these items as your milestones change.</p>
+        </div>
+
+        <div class="roadmap">
+          <div class="rmCol">
+            <h3>Now</h3>
+            <ul class="rmList">
+              <li><span class="rmDot"></span>Core loop polish (gather → upgrade → build)</li>
+              <li><span class="rmDot"></span>UI pass (inventory/chests, clarity, feedback)</li>
+              <li><span class="rmDot"></span>Zone balancing & progression pacing</li>
+            </ul>
+          </div>
+
+          <div class="rmCol">
+            <h3>Next</h3>
+            <ul class="rmList">
+              <li><span class="rmDot"></span>Void raid boss rotation</li>
+              <li><span class="rmDot"></span>More hero classes & abilities</li>
+              <li><span class="rmDot"></span>Marketplace + economy improvements</li>
+            </ul>
+          </div>
+
+          <div class="rmCol">
+            <h3>Later</h3>
+            <ul class="rmList">
+              <li><span class="rmDot"></span>Seasonal events & limited cosmetics</li>
+              <li><span class="rmDot"></span>Guild/social features</li>
+              <li><span class="rmDot"></span>Expanded zones + rare resource tiers</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section alt">
+      <div class="container">
+        <div class="sectionHead">
+          <h2>FAQ</h2>
+          <p>Quick answers. Easy to edit later.</p>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>When is the Roblox link going live?</summary>
+            <p>
+              Soon! The “Play on Roblox” buttons are currently placeholders. Once you have the link,
+              update it in <code>script.js</code> under <code>links.roblox</code>.
+            </p>
+          </details>
+
+          <details>
+            <summary>Islebound is solo or multiplayer?</summary>
+            <p>Both — you can progress solo and also jump into group content like Void raids.</p>
+          </details>
+
+          <details>
+            <summary>How do I follow development?</summary>
+            <p>
+              The best place will be Discord (placeholder for now), plus this site’s roadmap/devlog section
+              if you decide to add updates here.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can I submit feedback or ideas?</summary>
+            <p>
+              Yep — wire the “Submit Feedback” button to your Discord channel, Google Form, or Roblox group.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section id="community" class="section">
+      <div class="container">
+        <div class="communityCard">
+          <div>
+            <h2>Join the Islebound community</h2>
+            <p>
+              Get updates, patch notes, and help shape the game. (Buttons are placeholders until your links are ready.)
+            </p>
+          </div>
+
+          <div class="communityActions">
+            <button class="btn primary wide" data-link="discord">Join Discord</button>
+            <button class="btn ghost wide" data-link="robloxGroup">Roblox Group</button>
+            <button class="btn subtle wide" data-link="feedback">Submit Feedback</button>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="footerLeft">
+            <div class="footerBrand">
+              <span class="brandMark" aria-hidden="true"></span>
+              <strong>Islebound</strong>
+            </div>
+            <div class="tiny">
+              © <span id="year"></span> Islebound. All rights reserved.
+            </div>
+          </div>
+
+          <div class="footerRight">
+            <a href="#top">Back to top ↑</a>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" data-toast hidden>
+    <div class="toastTitle">Placeholder link</div>
+    <div class="toastBody">This button will be updated when your links are ready.</div>
+  </div>
+</body>
+</html>
