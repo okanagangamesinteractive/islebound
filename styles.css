@@ -126,6 +126,10 @@ a:hover{opacity:.9}
   pointer-events: none;
   transition: transform .18s ease, opacity .18s ease;
 
+.mobileMenu[hidden]{
+  display: none !important;
+}
+
 @media (max-width: 920px){
   .navLinks{display:none}
   .hamburger{display:inline-block}
