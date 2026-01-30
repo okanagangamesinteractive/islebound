@@ -636,14 +636,14 @@ body::before {
 .mockBody {
   position: relative;
   max-width: 100%;
-  max-height: 50vh;     /* ← controls overall mockup size */
+  max-height: 25vh;     /* ← controls overall mockup size */
   margin: 2rem auto;
   display: flex;
   justify-content: center;
 }
 .heroImg {
   max-width: 100%;
-  max-height: 50vh;     /* ← THIS is the key line */
+  max-height: 25vh;     /* ← THIS is the key line */
   width: auto;
   height: auto;
   object-fit: contain;
