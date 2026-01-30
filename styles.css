@@ -643,7 +643,7 @@ body::before {
 }
 .heroImg {
   max-width: 100%;
-  max-height: 75vh;     /* ← THIS is the key line */
+  max-height: 40vh;     /* ← THIS is the key line */
   width: auto;
   height: auto;
   object-fit: contain;
