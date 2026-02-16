@@ -58,14 +58,12 @@ body{
   background-position: center top; /* 👈 keeps the TOP visible on widescreen */
 }
 
-/* Optional: if you DO have a real background image, uncomment and set path:
 .page-container{
   background-image: url("assets/Asset15.jpg");
   background-repeat:no-repeat;
   background-size: cover;
   background-position: center top; 
 }
-*/
 
 /* Ensure content isn't hidden behind the fixed header */
 main{ padding-top: var(--navH); }
