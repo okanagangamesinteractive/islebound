@@ -40,7 +40,37 @@ body{
   background: var(--bg);
   overflow-x:hidden;
 }
+body{ position: relative; }
 
+/* Background image sits behind EVERYTHING */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+
+  background-image: url("assets/Asset15.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;  /* keep the top visible */
+  background-size: cover;
+
+  /* optional: slightly dim so text/UI stays readable */
+  filter: saturate(1.05) brightness(.75);
+}
+
+/* Optional overlay for vibe + readability */
+body::after{
+  content:"";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background:
+    radial-gradient(1200px 700px at 20% -10%, rgba(181,109,255,.22), transparent 55%),
+    radial-gradient(900px 600px at 80% 5%, rgba(109,226,255,.18), transparent 50%),
+    linear-gradient(180deg, rgba(11,16,34,.55), rgba(7,10,18,.85));
+  pointer-events:none;
+}
 /* ---------- Page background (top preserved on widescreen) ---------- */
 .page-container{
   min-height:100vh;
