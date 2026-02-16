@@ -34,13 +34,18 @@
 /* ---------- Reset / Base ---------- */
 *{ box-sizing:border-box; }
 html,body{ height:100%; width:100%; margin:0; }
+
+/* Put the fallback color on HTML */
+html{ background: var(--bg); }
+
 body{
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
-  background: var(--bg);
+  background: transparent;     /* IMPORTANT: don't paint over the wallpaper */
   overflow-x:hidden;
+  position: relative;
+  z-index: 0;                  /* creates a safe stacking context */
 }
-body{ position: relative; }
 
 /* Background image sits behind EVERYTHING */
 body::before{
@@ -48,30 +53,47 @@ body::before{
   position: fixed;
   inset: 0;
   z-index: -2;
+  pointer-events: none;
 
-  background-image: url("assets/Asset15.jpg");
+  /* Use the variable so you only set the path once */
+  background-image: var(--pageBgImg);
   background-repeat: no-repeat;
-  background-position: center top;  /* keep the top visible */
+  background-position: center top;
   background-size: cover;
 
-  /* optional: slightly dim so text/UI stays readable */
-  filter: saturate(1.05) brightness(.75);
+  /* Adjust to taste */
+  filter: saturate(1.05) brightness(.78);
 }
 
-/* Optional overlay for vibe + readability */
+/* Overlay for vibe + readability */
 body::after{
   content:"";
   position: fixed;
   inset: 0;
   z-index: -1;
+  pointer-events:none;
 
   background:
     radial-gradient(1200px 700px at 20% -10%, rgba(181,109,255,.22), transparent 55%),
     radial-gradient(900px 600px at 80% 5%, rgba(109,226,255,.18), transparent 50%),
-    linear-gradient(180deg, rgba(11,16,34,.55), rgba(7,10,18,.85));
-  pointer-events:none;
+    linear-gradient(180deg, rgba(11,16,34,.55), rgba(7,10,18,.86));
 }
-/* ---------- Page background (top preserved on widescreen) ---------- */
+
+/* Widescreen: preserve TOP of the image instead of cropping */
+@media (min-aspect-ratio: 16/9){
+  body::before{
+    background-size: 100% auto;  /* shows more top */
+    background-position: center top;
+  }
+}
+@media (min-aspect-ratio: 21/9){
+  body::before{
+    background-size: contain;    /* guarantees no crop */
+    background-position: center top;
+  }
+}
+
+/* ---------- Page container must be transparent (so wallpaper shows) ---------- */
 .page-container{
   min-height:100vh;
   width:100%;
@@ -79,65 +101,15 @@ body::after{
   margin:0;
   position:relative;
 
-  /* IMPORTANT: remove transform/filter effects that can break fixed positioning */
   transform: none !important;
   filter: none !important;
 
-  /* Background strategy:
-     - Default: cover for nice fill
-     - Position: top center so top stays visible
-     - 16:9+: switch to "100% auto" to reveal top instead of cropping */
-  background-image:
-    radial-gradient(1200px 700px at 20% -10%, rgba(181,109,255,.22), transparent 55%),
-    radial-gradient(900px 600px at 80% 5%, rgba(109,226,255,.18), transparent 50%),
-    linear-gradient(180deg, rgba(11,16,34,.85), rgba(7,10,18,.92));
-  background-repeat:no-repeat;
-  background-position: center top;
-  background-size: cover;
-  background-color: var(--bg);
-}
-
-/* Optional: if you WANT the full-page background image, uncomment this block.
-   (This uses your Asset15.jpg as the page background) */
-/*
-.page-container{
-  background-image: var(--pageBgImg);
-  background-repeat:no-repeat;
-  background-position:center top;
-  background-size:cover;
-  background-color: var(--bg);
-}
-*/
-
-/* Widescreen: preserve the TOP of the background instead of cropping */
-@media (min-aspect-ratio: 16/9){
-  .page-container{
-    background-size: 100% auto;     /* show more top; may leave bottom space */
-    background-position: center top;
-  }
-}
-
-/* Ultra-wide: guarantee no crop at all (letterbox with bg-color) */
-@media (min-aspect-ratio: 21/9){
-  .page-container{
-    background-size: contain;
-    background-position: center top;
-  }
+  background: transparent;      /* IMPORTANT: stop hiding the background image */
 }
 
 /* Prevent content from hiding behind fixed header */
 main{ padding-top: var(--navH); }
 
-/* ---------- Top glow ---------- */
-.topGlow{
-  position: fixed;
-  top:0; left:0; right:0;
-  height: 4px;
-  z-index: 1200;
-  background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
-  opacity:.65;
-  pointer-events:none;
-}
 
 /* =========================
    HEADER / NAV (Hard-fixed)
