@@ -1,28 +1,3 @@
-
-
-
-You said:
-Atlas, refer the CSS that you optimized for me from the original CSS that I copy pasted today. Take that optimization and add or change it with these next requirements:
-
-1. I need the header navigation to be centered and pinned to the top of the page regardless of if it’s Mobile or Desktop optimized/screen sizing. 
-
-2. Second issue is that in widescreen mode (16x9), the background stretches to where the top of the background image is cut off. The width is fine, but I need the top of the image to be displayed appropriately regardless of window sizing changes. 
-
-ChatGPT said:
-
-Thought for 30s
-Absolutely — based on your current HTML structure (the <header class="nav"> ... inside .page-container), here’s a full copy-paste styles.css that:
-
-Pins the header to the very top on every screen size ✅
-
-Keeps the nav links truly centered (brand left, actions right, links centered) ✅
-
-Fixes the widescreen background top getting chopped by anchoring the background to top center while still filling the screen nicely ✅
-
-(Your HTML shows the hero image as an <img> and you likely have a page background image elsewhere — this CSS handles the page background behavior.) 
-index
-
-
 /* =========================
    Islebound — styles.css
    Header pinned + centered
