@@ -539,12 +539,3 @@ h1{
 @media (prefers-reduced-motion: reduce){
   *{ transition:none !important; scroll-behavior:auto !important; }
 }
-Two tiny “gotchas” to be aware of (so you don’t get tricked again)
-If you’re using a real background image behind the entire site, you must set it on .page-container or body (not on some inner hero div). I left the block in there — just uncomment it.
-
-If you keep background-size: cover everywhere, there will always be some cropping on certain aspect ratios. That’s why the min-aspect-ratio: 16/9 rule switches the sizing mode.
-
-If you want, send me your current styles.css file content (even just the first ~120 lines) and I’ll merge this without removing anything you still need (in case you had extra sections below Features that aren’t shown in index.txt).
-
-
-
